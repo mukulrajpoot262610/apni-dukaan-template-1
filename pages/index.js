@@ -1,7 +1,15 @@
-export default function Home() {
+import Head from "next/head";
+import Home from "../components/Home";
+
+export default function Homepage() {
   return (
-    <h1 className="text-3xl font-bold">
-      Hello world!
-    </h1>
+    <main>
+      <Head>
+        <title>Mukul Store - Apni Dukaan</title>
+      </Head>
+
+      <Home />
+
+    </main>
   )
 }
