@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <section className='h-fit border-t flex justify-center items-center flex-col'>
-                <div className='w-10/12 h-full flex justify-between items-center p-6 mt-6'>
+                <div className='w-10/12 h-full flex flex-wrap gap-6 justify-between items-center p-6 mt-6'>
 
                     <div className='flex items-center gap-6'>
                         <i className="fa-solid fa-truck-fast text-5xl"></i>
@@ -35,7 +35,7 @@ const Footer = () => {
 
                 </div>
             </section>
-            <footer className="text-gray-600 body-font flex justify-center flex-col items-center">
+            <footer className="text-gray-600 body-font flex justify-center flex-col items-center mb-24 lg:mb-0">
                 <div className='w-10/12'>
                     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">

@@ -10,7 +10,7 @@ const Navbar = () => {
                     <h1 className='font-extrabold text-xl'>STORE_NAME</h1>
                 </div>
 
-                <div className='flex gap-8'>
+                <div className='fixed left-0 w-full lg:w-fit bottom-0 py-3 lg:py-0 flex justify-evenly lg:justify-center bg-white lg:static lg:gap-8'>
                     <div className='flex flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500'>
                         <i className="fa-solid fa-bars-progress text-2xl"></i>
                         <h1 className='text-sm font-bold'>Categories</h1>
