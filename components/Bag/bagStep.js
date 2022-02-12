@@ -1,14 +1,27 @@
+import Link from 'next/link'
 import React from 'react'
+import ContentLoader from 'react-content-loader'
 
-const Address = () => {
+const BagStep = ({ setActiveTab }) => {
     return (
-        <section className="h-fit w-full mt-24">
-            <h1 className='my-6 text-xl font-bold'>Select a Delivery Address</h1>
+        <div>
+            <h1 className='my-6 text-xl font-bold mt-24'>My Shopping Bag [ 4 ]</h1>
             <div className='flex gap-6 flex-col lg:flex-row'>
 
                 <div className='w-full lg:w-8/12 h-full'>
-                    <div className='flex flex-wrap justify-start items-start gap-6'>
-
+                    <div className='flex flex-wrap justify-center lg:justify-start items-start gap-6'>
+                        <ContentLoader height={280}>
+                            <rect x="3" y="3" rx="10" ry="10" width="300" height="180" />
+                            <rect x="6" y="190" rx="0" ry="0" width="292" height="20" />
+                            <rect x="4" y="215" rx="0" ry="0" width="239" height="20" />
+                            <rect x="4" y="242" rx="0" ry="0" width="274" height="20" />
+                        </ContentLoader>
+                        <ContentLoader height={280}>
+                            <rect x="3" y="3" rx="10" ry="10" width="300" height="180" />
+                            <rect x="6" y="190" rx="0" ry="0" width="292" height="20" />
+                            <rect x="4" y="215" rx="0" ry="0" width="239" height="20" />
+                            <rect x="4" y="242" rx="0" ry="0" width="274" height="20" />
+                        </ContentLoader>
                     </div>
                 </div>
 
@@ -42,14 +55,15 @@ const Address = () => {
 
                         <hr className=' my-4' />
 
-                        <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white'>
+                        <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white' onClick={() => setActiveTab(2)}>
                             Continue
                         </button>
                     </div>
                 </div>
             </div>
-        </section>
+
+        </div>
     )
 }
 
-export default Address
+export default BagStep

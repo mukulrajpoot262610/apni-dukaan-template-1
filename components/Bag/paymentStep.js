@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Address = () => {
+const PaymentStep = () => {
     return (
         <section className="h-fit w-full mt-24">
-            <h1 className='my-6 text-xl font-bold'>Select a Delivery Address</h1>
+            <h1 className='my-6 text-xl font-bold'>Payment Method</h1>
             <div className='flex gap-6 flex-col lg:flex-row'>
 
                 <div className='w-full lg:w-8/12 h-full'>
-                    <div className='flex flex-wrap justify-start items-start gap-6'>
-
+                    <div className='border p-6 rounded-lg'>
+                        <h1 className='text-2xl font-bold'>Pay on delivery (Cash/Card/UPI)</h1>
+                        <p>Pay in cash or pay in person at the time of delivery with GPay/PayTM/PhonePe.</p>
+                        <button className='bg-gray-800 text-white p-3 px-6 mt-4 rounded-lg'>Place Order</button>
                     </div>
                 </div>
 
@@ -39,12 +41,6 @@ const Address = () => {
                         <hr className=' my-4' />
 
                         <h6 className='text-sm text-gray-500'>Average delivery time: <strong className='text-black'>4-24 hours</strong></h6>
-
-                        <hr className=' my-4' />
-
-                        <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white'>
-                            Continue
-                        </button>
                     </div>
                 </div>
             </div>
@@ -52,4 +48,4 @@ const Address = () => {
     )
 }
 
-export default Address
+export default PaymentStep

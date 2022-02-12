@@ -17,31 +17,6 @@ const Navbar = () => {
                     </div>
                 </Link>
 
-                {
-                    router.pathname === '/bag' ? <div className="lg:flex mx-auto flex-wrap hidden">
-                        <a className={`sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-green-500 text-green-500 tracking-wider rounded-t`}>
-                            Bag
-                        </a>
-                        <a className="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
-                            Address
-                        </a>
-                        <a className="sm:px-6 py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
-                            Payment
-                        </a>
-                    </div> : ""
-                }
-
-                {
-                    router.pathname === '/bag' && <h1 className='uppercase font-bold lg:hidden'>Step 1/3</h1>
-                }
-                {
-                    router.pathname === '/address' && <h1 className='uppercase font-bold lg:hidden'>Step 2/3</h1>
-                }
-                {
-                    router.pathname === '/payment' && <h1 className='uppercase font-bold lg:hidden'>Step 3/3</h1>
-                }
-
-
                 <div className='fixed left-0 w-full lg:w-fit bottom-0 py-3 lg:py-0 flex justify-evenly lg:justify-center bg-white lg:static lg:gap-8'>
                     <Link href="/" passHref>
                         <div className='flex flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500 lg:hidden'>

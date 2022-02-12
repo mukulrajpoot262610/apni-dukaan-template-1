@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Address = () => {
+const AddressStep = ({ setActiveTab }) => {
+
+    const handleNext = () => {
+        setActiveTab(3)
+    }
+
     return (
         <section className="h-fit w-full mt-24">
             <h1 className='my-6 text-xl font-bold'>Select a Delivery Address</h1>
@@ -42,7 +47,7 @@ const Address = () => {
 
                         <hr className=' my-4' />
 
-                        <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white'>
+                        <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white' onClick={handleNext}>
                             Continue
                         </button>
                     </div>
@@ -52,4 +57,4 @@ const Address = () => {
     )
 }
 
-export default Address
+export default AddressStep
