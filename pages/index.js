@@ -5,7 +5,7 @@ export default function Homepage() {
   return (
     <main>
       <Head>
-        <title>Mukul Store - Apni Dukaan</title>
+        <title>STORENAME - Apni Dukaan</title>
       </Head>
 
       <Home />
