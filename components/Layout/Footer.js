@@ -4,8 +4,39 @@ import React from 'react'
 const Footer = () => {
     return (
         <>
+            <section className='h-fit border-t flex justify-center items-center flex-col'>
+                <div className='w-10/12 h-full flex justify-between items-center p-6 mt-6'>
+
+                    <div className='flex items-center gap-6'>
+                        <i className="fa-solid fa-truck-fast text-5xl"></i>
+                        <div>
+                            <h1 className='font-bold'>Free Delivery</h1>
+                            <p className='text-gray-400 text-sm'>Delivery happens within TIME hours</p>
+                        </div>
+                    </div>
+
+                    <div className='flex items-center gap-6'>
+                        <i className="fa-solid fa-wallet text-5xl"></i>
+                        <div>
+                            <h1 className='font-bold'>Payment Option</h1>
+                            <p className='text-gray-400 text-sm'>Cash on Delivery</p>
+                        </div>
+                    </div>
+
+                    <div className='flex items-center gap-6'>
+                        <i className="fa-solid fa-headset text-5xl"></i>
+                        <div>
+                            <h1 className='font-bold'>Customer Support</h1>
+                            <p className='text-gray-400 text-sm'>buyer.support@apnidukaan.io</p>
+                            <p className='text-gray-400 text-sm'>+91 8888888888</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
             <footer className="text-gray-600 body-font flex justify-center flex-col items-center">
-                <div className='w-10/12 mt-6'>
+                <div className='w-10/12'>
                     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                             <Image src="/store.webp" height={50} width={50} alt="Logo" className='rounded-lg' />
