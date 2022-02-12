@@ -32,7 +32,6 @@ const Footer = () => {
                         </div>
                     </div>
 
-
                 </div>
             </section>
             <footer className="text-gray-600 body-font flex justify-center flex-col items-center mb-24 lg:mb-0">

@@ -7,8 +7,10 @@ const Catalogue = () => {
             <div className='flex items-center gap-8'>
                 <p className='hover:underline cursor-pointer'>All Catgories</p>
             </div>
+
             <hr className='my-4' />
-            <div className='p-4 flex gap-6'>
+
+            <div className='p-4 flex flex-wrap justify-center items-center gap-6 my-10'>
                 <ContentLoader height={280}>
                     <rect x="3" y="3" rx="10" ry="10" width="300" height="180" />
                     <rect x="6" y="190" rx="0" ry="0" width="292" height="20" />

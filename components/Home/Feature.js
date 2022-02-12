@@ -14,10 +14,10 @@ const Feature = () => {
                     <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
                 </div>
 
-                <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+                <div className="flex flex-wrap w-full lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
 
                     {
-                        freeDelivery ? <div className="p-2 sm:w-1/2 w-full">
+                        freeDelivery ? <div className="p-2 w-full sm:w-1/2">
                             <div className="bg-green-50 text-green-600 rounded flex p-4 h-full items-center">
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" className="text-green-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
                                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -25,7 +25,7 @@ const Feature = () => {
                                 </svg>
                                 <span className="title-font font-medium">Authentic Cliche Forage</span>
                             </div>
-                        </div> : <ContentLoader className='w-1/2' height={116}>
+                        </div> : <ContentLoader className='w-full lg:w-1/2' height={116}>
                             <rect x="37" y="34" rx="0" ry="0" width="0" height="0" />
                             <rect x="28" y="29" rx="0" ry="0" width="258" height="32" />
                             <rect x="28" y="71" rx="0" ry="0" width="465" height="32" />
@@ -43,7 +43,7 @@ const Feature = () => {
                                 </svg>
                                 <span className="title-font font-medium">Authentic Cliche Forage</span>
                             </div>
-                        </div> : <ContentLoader className='w-1/2' height={116}>
+                        </div> : <ContentLoader className='w-full lg:w-1/2' height={116}>
                             <rect x="37" y="34" rx="0" ry="0" width="0" height="0" />
                             <rect x="28" y="29" rx="0" ry="0" width="258" height="32" />
                             <rect x="28" y="71" rx="0" ry="0" width="465" height="32" />

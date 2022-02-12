@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
 
             <Navbar />
             <main className='flex justify-center items-center flex-col'>
-                <div className='w-10/12'>
+                <div className='w-11/12 lg:w-10/12'>
                     {children}
                 </div>
             </main>
