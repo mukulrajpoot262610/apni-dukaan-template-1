@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import { Toaster } from 'react-hot-toast'
 import { useSelector } from 'react-redux'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
             </Head>
 
             <Navbar />
+            <Toaster />
             <main className='flex justify-center items-center flex-col'>
                 <div className='w-11/12 lg:w-10/12'>
                     {children}

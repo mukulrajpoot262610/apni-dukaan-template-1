@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 const Navbar = () => {
 
     const { details } = useSelector(state => state.details)
+    const { quantity } = useSelector(state => state.cart)
     const router = useRouter()
 
     return (
@@ -38,8 +39,9 @@ const Navbar = () => {
                             <h1 className='text-sm font-bold'>Categories</h1>
                         </div>
                     </Link>
-                    <Link href="/bag" passHref>
-                        <div className='flex flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500'>
+                    <Link href={`/${details?.storeLink}/bag`} passHref>
+                        <div className='flex flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500 relative'>
+                            <div className='absolute top-0 -right-2 h-5 w-5 rounded-full bg-red-500 text-white flex justify-center items-center p-2'>{quantity}</div>
                             <i className="fa-solid fa-bag-shopping text-2xl"></i>
                             <h1 className='text-sm font-bold'>Bag</h1>
                         </div>

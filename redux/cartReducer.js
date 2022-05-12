@@ -12,7 +12,7 @@ const cartSlice = createSlice({
             state.products = [payload, ...state.products]
             state.quantity = state.products.map((e) => e.qty).reduce((a, b) => a + b)
             state.total = state.products.map((e) => {
-                return ({ product: e.product.salePrice, qty: e.qty })
+                return ({ product: e.product.discountedPrice, qty: e.qty })
             }).map(e => +e.product * +e.qty).reduce((a, b) => a + b)
         },
         deleteProductData: (state, { payload }) => {

@@ -1,14 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import AddressStep from '../components/Bag/addressStep'
-import BagStep from '../components/Bag/bagStep'
-import PaymentStep from '../components/Bag/paymentStep'
+import { useSelector } from 'react-redux'
+import AddressStep from '../../components/Bag/addressStep'
+import BagStep from '../../components/Bag/bagStep'
+import PaymentStep from '../../components/Bag/paymentStep'
 
 const Bag = () => {
 
     const [activeTab, setActiveTab] = useState(1)
-    const bagItems = 2
+    const { quantity } = useSelector(state => state.cart)
+    const bagItems = quantity
 
     return (
         <section className="h-fit w-full">
