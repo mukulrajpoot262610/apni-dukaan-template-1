@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Footer = () => {
+
+    const { details } = useSelector(state => state.details)
+
     return (
         <>
             <section className='h-fit border-t flex justify-center items-center flex-col'>
@@ -38,11 +42,10 @@ const Footer = () => {
                 <div className='w-10/12'>
                     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <Image src="/store.webp" height={50} width={50} alt="Logo" className='rounded-lg' />
-                            <span className="ml-3 text-xl">STORE_NAME</span>
+                            <img src={details ? details.logo : "/store.webp"} height={50} width={50} alt="Logo" className='rounded-lg' />
+                            <h1 className='font-extrabold text-xl'>{details ? details.businessName : "STORE_NAME"}</h1>
                         </a>
-                        <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 Apni Dukaan —
-                            <a href="https://github.com/mukulrajpoot262610" className="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@mukulrajpoot262610</a>
+                        <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 Apni Dukaan
                         </p>
                         <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                             <a className="text-gray-500">

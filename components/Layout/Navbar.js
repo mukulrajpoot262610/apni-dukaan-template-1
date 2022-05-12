@@ -2,18 +2,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
 
+    const { details } = useSelector(state => state.details)
     const router = useRouter()
 
     return (
         <nav className='fixed top-0 z-50 h-20 bg-white border-b border-gray-200 w-full flex justify-center items-center flex-col'>
             <div className='w-10/12 flex items-center justify-between h-full'>
-                <Link href="/" passHref>
+                <Link href={`/${details?.storeLink}`} passHref>
                     <div className='flex items-center gap-5'>
-                        <Image src="/store.webp" height={50} width={50} alt="Logo" className='rounded-lg' />
-                        <h1 className='font-extrabold text-xl'>STORE_NAME</h1>
+                        <img src={details ? details.logo : "/store.webp"} height={50} width={50} alt="Logo" className='rounded-lg' />
+                        <h1 className='font-extrabold text-xl'>{details ? details.businessName : "STORE_NAME"}</h1>
                     </div>
                 </Link>
 
