@@ -10,6 +10,7 @@ const Bag = () => {
 
     const [activeTab, setActiveTab] = useState(1)
     const { quantity } = useSelector(state => state.cart)
+    const { details } = useSelector(state => state.details)
     const bagItems = quantity
 
     return (
@@ -25,7 +26,7 @@ const Bag = () => {
                         <Image src="/empty-bag.svg" height={300} width={400} alt="" />
                         <h1 className='text-2xl'>Your bag is empty</h1>
                         <p>Looks like you haven&apos;t made your choice yet.</p>
-                        <Link href="/" passHref>
+                        <Link href={`/${details?.storeLink}`} passHref>
                             <button className='bg-gray-800 text-white p-3 px-6 mt-4 rounded-lg'>Back to Home</button>
                         </Link>
                     </div>

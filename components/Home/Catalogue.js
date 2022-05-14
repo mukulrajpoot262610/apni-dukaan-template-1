@@ -21,7 +21,7 @@ const Catalogue = () => {
                     products ? products?.map(e => <div key={e._id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
                         <Link href={`/${details.storeLink}/${e._id}`}>
                             <a className="block relative h-48 rounded overflow-hidden">
-                                <Image layout='fill' objectFit='contain' objectPosition="bottom" alt="ecommerce" src={e.image[0]} />
+                                <Image layout='fill' objectFit='cover' objectPosition="center" alt="ecommerce" src={e.image[0]} />
                             </a>
                         </Link>
                         <div className='flex justify-between items-start'>

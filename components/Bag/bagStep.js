@@ -1,16 +1,33 @@
-import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import ContentLoader from 'react-content-loader'
 import { useSelector } from 'react-redux'
 import Image from 'next/image'
+import Modal from 'react-modal';
+import LoginModal from '../Auth/LoginModal';
 
 const BagStep = ({ setActiveTab }) => {
 
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+
     const { products, quantity, total } = useSelector(state => state.cart)
+    const { isAuth } = useSelector(state => state.auth)
+    const [isLogin, setIsLogin] = useState()
+    const [email, setEmail] = useState()
+    const [error, setError] = useState(false)
+
+    const handleLogin = () => {
+
+    }
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
 
     return (
-        <div>
+        <div className=''>
             <h1 className='my-6 text-xl font-bold mt-24'>My Shopping Bag [ {quantity} ]</h1>
+            <LoginModal openModal={openModal} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
             <div className='flex gap-6 flex-col lg:flex-row'>
 
                 <div className='w-full lg:w-8/12 h-full'>
@@ -75,10 +92,15 @@ const BagStep = ({ setActiveTab }) => {
                         <h6 className='text-sm text-gray-500'>Average delivery time: <strong className='text-black'>1-4 hours</strong></h6>
 
                         <hr className=' my-4' />
+                        {
+                            isAuth ? <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white' onClick={() => setActiveTab(2)}>
+                                Continue
+                            </button> : <button className='w-full font-bold bg-red-50 p-3 rounded-lg text-red-500 hover:border-red-500 border border-white' onClick={openModal}>
+                                Log In
+                            </button>
+                        }
 
-                        <button className='w-full font-bold bg-green-50 p-3 rounded-lg text-green-500 hover:border-green-500 border border-white' onClick={() => setActiveTab(2)}>
-                            Continue
-                        </button>
+
                     </div>
                 </div>
             </div>

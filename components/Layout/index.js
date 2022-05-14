@@ -24,6 +24,7 @@ const Layout = ({ children }) => {
                     {children}
                 </div>
             </main>
+            <div id="react-modals" />
             <Footer />
         </>
     )
