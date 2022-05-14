@@ -9,7 +9,7 @@ const Order = () => {
     const { products, total } = useSelector(state => state.cart)
     const { details } = useSelector(state => state.details)
     const { user } = useSelector(state => state.auth)
-    const { order } = useSelector(state => state.order)
+    const { order } = useSelector(state => state.order?.order)
 
     return (
         <div className="flex flex-col items-center justify-center mt-24">
@@ -45,8 +45,8 @@ const Order = () => {
 
                             <hr />
                         </>
-                        <Link href="/" passHref>
-                            <button className="cursor-pointer bg-black text-white py-4 px-6 my-4 flex items-center uppercase font-bold">Shop more</button>
+                        <Link href={`/${details.storeLink}`} passHref>
+                            <button className="cursor-pointer rounded-lg bg-black text-white py-4 px-6 my-4 flex items-center uppercase font-bold">Shop more</button>
                         </Link>
                     </div>
 

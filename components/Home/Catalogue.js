@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import ContentLoader from 'react-content-loader'
 import { useSelector } from 'react-redux'
@@ -6,19 +6,31 @@ import Link from 'next/link'
 
 const Catalogue = () => {
 
+    const [selected, setSelected] = useState("All")
     const { products, details } = useSelector(state => state.details)
+    const [filteredProducts, setFilteredProducts] = useState(products)
+
+    useEffect(() => {
+        if (selected !== "All") {
+            setFilteredProducts(products.filter(e => e.category === selected))
+        } else {
+            setFilteredProducts(products)
+        }
+    }, [selected, products])
 
     return (
         <>
-            <div className='flex items-center gap-8'>
-                <p className='hover:underline cursor-pointer'>All Catgories</p>
+            <p className='hover:underline cursor-pointer mb-4 font-bold uppercase text-lg'>Categories</p>
+            <div className='flex flex-wrap'>
+                <h1 onClick={() => setSelected("All")} className={`px-10 p-2 border-b-2 cursor-pointer hover:bg-gray-100 rounded-lg-t ${selected === "All" ? "font-bold border-black bg-gray-100" : ""} `}>All</h1>
+                {
+                    details?.category?.map((e, i) => <h1 onClick={() => setSelected(e)} className={`px-10 p-2 border-b-2 cursor-pointer hover:bg-gray-100 rounded-lg-t ${selected === e ? "font-bold border-black bg-gray-100" : ""} `}>{e}</h1>)
+                }
             </div>
-
-            <hr className='my-4' />
 
             <div className='p-4 flex flex-wrap justify-center items-center gap-6 my-10'>
                 {
-                    products ? products?.map(e => <div key={e._id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                    products ? filteredProducts?.map(e => <div key={e._id} className="lg:w-1/4 md:w-1/2 p-4 w-full">
                         <Link href={`/${details.storeLink}/${e._id}`}>
                             <a className="block relative h-48 rounded overflow-hidden">
                                 <Image layout='fill' objectFit='cover' objectPosition="center" alt="ecommerce" src={e.image[0]} />

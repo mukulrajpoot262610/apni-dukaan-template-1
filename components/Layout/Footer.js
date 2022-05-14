@@ -15,7 +15,7 @@ const Footer = () => {
                         <i className="fa-solid fa-truck-fast text-5xl"></i>
                         <div>
                             <h1 className='font-bold'>Free Delivery</h1>
-                            <p className='text-gray-400 text-sm'>Delivery happens within TIME hours</p>
+                            <p className='text-gray-400 text-sm'>Delivery happens within {details?.deliveryTiming} hours</p>
                         </div>
                     </div>
 
@@ -31,8 +31,8 @@ const Footer = () => {
                         <i className="fa-solid fa-headset text-5xl"></i>
                         <div>
                             <h1 className='font-bold'>Customer Support</h1>
-                            <p className='text-gray-400 text-sm'>buyer.support@apnidukaan.io</p>
-                            <p className='text-gray-400 text-sm'>+91 8888888888</p>
+                            <p className='text-gray-400 text-sm'>{details?.supportEmail}</p>
+                            <p className='text-gray-400 text-sm'>+91 {details?.supportPhone}</p>
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
                 <div className='w-10/12'>
                     <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                            <img src={details ? details.logo : "/store.webp"} height={50} width={50} alt="Logo" className='rounded-lg' />
+                            <img src={details ? details.logo : "/store.webp"} height={50} width={50} alt="Logo" className='rounded-lg mr-4' />
                             <h1 className='font-extrabold text-xl'>{details ? details.businessName : "STORE_NAME"}</h1>
                         </a>
                         <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 Apni Dukaan

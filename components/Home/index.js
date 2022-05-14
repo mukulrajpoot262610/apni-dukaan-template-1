@@ -13,7 +13,7 @@ const Header = ({ response }) => {
         <header className='min-h-screen w-full mt-24'>
             <div className='relative w-full h-1/2'>
                 {
-                    details ? <Image src="/banner.jpg" height={500} width={1920} alt='' className='rounded-xl' objectFit='cover' objectPosition="center" /> : <ContentLoader height={"400"} width={"100%"} className='rounded-xl'>
+                    details ? <Image src={details.banner ? details.banner : "/banner.jpg"} height={800} width={1920} alt='' className='rounded-xl' objectFit='cover' objectPosition="center" /> : <ContentLoader height={"400"} width={"100%"} className='rounded-xl'>
                         <rect rx="0" ry="0" width="100%" height="100%" />
                     </ContentLoader>
                 }
@@ -22,8 +22,9 @@ const Header = ({ response }) => {
             <hr className='w-full my-4' />
 
             <Feature />
-
-            <Catalogue />
+            <div id='category'>
+                <Catalogue />
+            </div>
 
         </header>
     )

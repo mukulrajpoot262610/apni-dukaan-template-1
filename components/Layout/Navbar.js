@@ -33,7 +33,7 @@ const Navbar = () => {
                             <h1 className='text-sm font-bold'>Search</h1>
                         </div>
                     </Link>
-                    <Link href="/products" passHref>
+                    <Link href={`/${details?.storeLink}/#category`} passHref>
                         <div className='flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500 hidden lg:flex'>
                             <i className="fa-solid fa-box text-2xl"></i>
                             <h1 className='text-sm font-bold'>Categories</h1>
