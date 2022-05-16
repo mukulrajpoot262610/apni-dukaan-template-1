@@ -46,10 +46,12 @@ const Navbar = () => {
                             <h1 className='text-sm font-bold'>Bag</h1>
                         </div>
                     </Link>
-                    <div className='flex flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500'>
-                        <i className="fa-solid fa-user text-2xl"></i>
-                        <h1 className='text-sm font-bold'>Account</h1>
-                    </div>
+                    <Link href={`/${details?.storeLink}/account`}>
+                        <div className='flex flex-col justify-center items-center cursor-pointer hover:text-black text-gray-500'>
+                            <i className="fa-solid fa-user text-2xl"></i>
+                            <h1 className='text-sm font-bold'>Account</h1>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </nav>

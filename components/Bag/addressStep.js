@@ -27,6 +27,10 @@ const AddressStep = () => {
             email: user.email
         }
 
+        if (user.address.length === 0) {
+            return toast.error('Please add your address')
+        }
+
         try {
             const { data } = await PlaceOrder(payload)
             dispatch(setOrder(data))

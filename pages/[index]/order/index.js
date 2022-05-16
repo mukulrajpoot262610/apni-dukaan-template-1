@@ -14,7 +14,7 @@ const Order = () => {
     return (
         <div className="flex flex-col items-center justify-center mt-24">
             <Head>
-                <title>Order - adidas Online Store</title>
+                <title>Order - Apni Dukaan</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -96,7 +96,6 @@ const Order = () => {
 
                     </div>
                 </div>
-
             </div>
         </div>
     )

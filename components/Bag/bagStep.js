@@ -1,26 +1,31 @@
 import React, { useState } from 'react'
 import ContentLoader from 'react-content-loader'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import Image from 'next/image'
 import Modal from 'react-modal';
 import LoginModal from '../Auth/LoginModal';
+import { deleteProductData } from '../../redux/cartReducer'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 const BagStep = ({ setActiveTab }) => {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
-
+    const dispatch = useDispatch()
     const { products, quantity, total } = useSelector(state => state.cart)
     const { isAuth } = useSelector(state => state.auth)
-    const [isLogin, setIsLogin] = useState()
-    const [email, setEmail] = useState()
-    const [error, setError] = useState(false)
 
     const handleLogin = () => {
 
     }
 
+    console.log(products)
+
     function openModal() {
         setIsOpen(true);
+    }
+
+    const deleteItem = (id) => {
+        dispatch(deleteProductData(id))
     }
 
 
@@ -35,8 +40,10 @@ const BagStep = ({ setActiveTab }) => {
                         {
                             products.length > 0 ? <>
                                 {
-                                    products.map(e => <div key={e._id} className="border-2 p-2 flex items-center gap-4 rounded-lg">
+                                    products.map(e => <div key={e.id} className="border-2 p-2 flex items-center gap-4 rounded-lg relative">
                                         <Image height={120} width={200} objectFit='cover' alt="ecommerce" src={e.product.image[0]} className="rounded-lg" />
+
+                                        <div className='absolute top-2 right-2 cursor-pointer' onClick={() => deleteItem(e.id)}><AiOutlineCloseCircle /></div>
                                         <div>
                                             <h2 className='font-bold'>{e.product.name}</h2>
                                             <p className='text-sm'>Quantity: {e.qty}</p>
