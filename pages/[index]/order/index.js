@@ -23,25 +23,27 @@ const Order = () => {
 
                     <div className="p-4 w-full lg:w-8/12">
                         <>
-                            <h1 className="font-bold text-4xl uppercase tracking-tighter">YOUR ORDER WAS PLACED SUCCESSFULLY</h1>
-                            <p className="my-4">Order Number: {order?._id}</p>
-                            <p className="my-4">Hi, thanks for shopping with {details?.name}! We will send a confirmation email to <span className="font-bold">{user?.email}</span> shortly</p>
-                            <hr />
-                            <p className="my-4">Track and trace details will be sent to your email upon shipment.</p>
-                            <hr />
-                            <h1 className="mt-4 mb-2 text-xl font-bold">DELIVERY ADDRESS</h1>
-                            <h1><span className='font-bold uppercase'>Landmark: </span>{order.shippingAddress?.landmark}</h1>
-                            <h1><span className='font-bold uppercase'>Street: </span>{order.shippingAddress?.street}</h1>
-                            <h1><span className='font-bold uppercase'>City: </span>{order.shippingAddress?.city}</h1>
-                            <h1><span className='font-bold uppercase'>Pincode: </span>{order.shippingAddress?.pincode}</h1>
+                            {
+                                order ? <><h1 className="font-bold text-4xl uppercase tracking-tighter">YOUR ORDER WAS PLACED SUCCESSFULLY</h1>
+                                    <p className="my-4">Order Number: {order?._id}</p>
+                                    <p className="my-4">Hi, thanks for shopping with {details?.name}! We will send a confirmation email to <span className="font-bold">{user?.email}</span> shortly</p>
+                                    <hr />
+                                    <p className="my-4">Track and trace details will be sent to your email upon shipment.</p>
+                                    <hr />
+                                    <h1 className="mt-4 mb-2 text-xl font-bold">DELIVERY ADDRESS</h1>
+                                    <h1><span className='font-bold uppercase'>Landmark: </span>{order.shippingAddress?.landmark}</h1>
+                                    <h1><span className='font-bold uppercase'>Street: </span>{order.shippingAddress?.street}</h1>
+                                    <h1><span className='font-bold uppercase'>City: </span>{order.shippingAddress?.city}</h1>
+                                    <h1><span className='font-bold uppercase'>Pincode: </span>{order.shippingAddress?.pincode}</h1>
 
-                            <h1 className="mt-4 mb-2 text-xl font-bold">BILLING ADDRESS</h1>
-                            <h1><span className='font-bold uppercase'>Landmark: </span>{order.shippingAddress?.landmark}</h1>
-                            <h1><span className='font-bold uppercase'>Street: </span>{order.shippingAddress?.street}</h1>
-                            <h1><span className='font-bold uppercase'>City: </span>{order.shippingAddress?.city}</h1>
-                            <h1><span className='font-bold uppercase'>Pincode: </span>{order.shippingAddress?.pincode}</h1>
-                            <h1 className="mt-4 text-base font-bold">PAYMENT OPTION</h1>
-                            <p className="mt-1 mb-8">{order.paymentMethod === "COD" ? "Cash On Delivery" : ""}</p>
+                                    <h1 className="mt-4 mb-2 text-xl font-bold">BILLING ADDRESS</h1>
+                                    <h1><span className='font-bold uppercase'>Landmark: </span>{order.shippingAddress?.landmark}</h1>
+                                    <h1><span className='font-bold uppercase'>Street: </span>{order.shippingAddress?.street}</h1>
+                                    <h1><span className='font-bold uppercase'>City: </span>{order.shippingAddress?.city}</h1>
+                                    <h1><span className='font-bold uppercase'>Pincode: </span>{order.shippingAddress?.pincode}</h1>
+                                    <h1 className="mt-4 text-base font-bold">PAYMENT OPTION</h1>
+                                    <p className="mt-1 mb-8">{order.paymentMethod === "COD" ? "Cash On Delivery" : ""}</p></> : <></>
+                            }
 
                             <hr />
                         </>
