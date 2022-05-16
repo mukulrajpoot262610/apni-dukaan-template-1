@@ -24,7 +24,7 @@ const Catalogue = () => {
             <div className='flex flex-wrap'>
                 <h1 onClick={() => setSelected("All")} className={`px-10 p-2 border-b-2 cursor-pointer hover:bg-gray-100 rounded-lg-t ${selected === "All" ? "font-bold border-black bg-gray-100" : ""} `}>All</h1>
                 {
-                    details?.category?.map((e, i) => <h1 onClick={() => setSelected(e)} className={`px-10 p-2 border-b-2 cursor-pointer hover:bg-gray-100 rounded-lg-t ${selected === e ? "font-bold border-black bg-gray-100" : ""} `}>{e}</h1>)
+                    details?.category?.map((e, i) => <h1 key={i} onClick={() => setSelected(e)} className={`px-10 p-2 border-b-2 cursor-pointer hover:bg-gray-100 rounded-lg-t ${selected === e ? "font-bold border-black bg-gray-100" : ""} `}>{e}</h1>)
                 }
             </div>
 

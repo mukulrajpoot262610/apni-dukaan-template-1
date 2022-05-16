@@ -100,7 +100,7 @@ const LoginModal = ({ setIsOpen, modalIsOpen }) => {
 
                 {
                     isLogin ? <div className='mt-2'>
-                        <p className='text-sm'>Don't have a Account? <span className='hover:underline cursor-pointer' onClick={(e) => setIsLogin(false)}>Sign Up</span></p>
+                        <p className='text-sm'>Don&apos;t have a Account? <span className='hover:underline cursor-pointer' onClick={(e) => setIsLogin(false)}>Sign Up</span></p>
                     </div> : <div className='mt-2'>
                         <p className='text-sm'>Already have a Account? <span className='hover:underline cursor-pointer' onClick={(e) => setIsLogin(true)}>Login</span></p>
                     </div>
