@@ -18,8 +18,6 @@ const BagStep = ({ setActiveTab }) => {
 
     }
 
-    console.log(products)
-
     function openModal() {
         setIsOpen(true);
     }

@@ -46,7 +46,7 @@ const AddressModal = ({ setIsOpen, modalIsOpen }) => {
             closeModal()
             toast.success('Added Successfully')
         } catch (err) {
-            toast.error(err.response.data.msg)
+            toast.error(err?.response?.data?.msg)
             console.log(err)
         }
     }

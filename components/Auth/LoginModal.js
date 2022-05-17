@@ -41,7 +41,7 @@ const LoginModal = ({ setIsOpen, modalIsOpen }) => {
             dispatch(setAuth(data))
             setIsLogin(true)
         } catch (err) {
-            toast.error(err.response.data.msg)
+            toast.error(err?.response?.data?.msg)
             console.log(err)
         }
     }
@@ -55,7 +55,7 @@ const LoginModal = ({ setIsOpen, modalIsOpen }) => {
             dispatch(setAuth(data))
             closeModal()
         } catch (err) {
-            toast.error(err.response.data.msg)
+            toast.error(err?.response?.data?.msg)
             console.log(err)
         }
     }

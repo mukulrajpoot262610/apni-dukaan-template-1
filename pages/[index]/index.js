@@ -33,7 +33,6 @@ export default function Homepage() {
     const fetchData = async () => {
       try {
         const { data } = await GetBusinessProduct({ slug })
-        console.log(data.products)
         dispatch(setProducts(data.products))
       } catch (err) {
         console.log(err)
